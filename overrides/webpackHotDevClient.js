@@ -52,6 +52,9 @@ ErrorOverlay.setEditorHandler(function editorHandler(errorLocation) {
 		// Hardcoded in WebpackDevServer
 		pathname: launchEditorEndpoint,
 	} );
+	console.log(endpoint,'endpoints name')
+
+	return
 	// </REACT-WP-SCRIPTS>
 	// Keep this sync with errorOverlayMiddleware.js
 	fetch(

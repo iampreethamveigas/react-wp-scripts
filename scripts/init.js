@@ -23,11 +23,12 @@ module.exports = function(
 	originalDirectory,
 	template
 ) {
-
 	// Parse a namespace based on the name of the package
 	const namespace = argv['php-namespace'] || 'ReactWPScripts';
 
+	// get the pacakage name
 	const pkgName = require( path.join( __dirname, '..', 'package.json' ) ).name;
+
 	const reactWPScriptsPath = path.join( appPath, 'node_modules', pkgName );
 	const appPackage = require( path.join( appPath, 'package.json' ) );
 
@@ -40,6 +41,7 @@ module.exports = function(
 		'scripts',
 		'init.js'
 	);
+
 	const reactScriptsInit = require(scriptsPath);
 	reactScriptsInit( appPath, appName, verbose, originalDirectory, template );
 
@@ -56,7 +58,7 @@ module.exports = function(
 	);
 
 	// Remove public folder
-	rimraf( path.join( appPath, 'public' ), () => {} );
+	// rimraf( path.join( appPath, 'public' ), () => {} );
 
 	// Derive a var name we can use for a dynamic public path
 	const publicPathVar = `${ appName.replace( /[\W]+/g, '' ) }BuildURL`;

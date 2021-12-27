@@ -7,8 +7,8 @@ module.exports = config => {
 	const appNameVar = require(paths.appPackageJson).name.replace( /[\W]+/g, '' );
 
 	// Remove HTML file output plugins.
-	config.plugins = config.plugins.filter( plugin => ! ( plugin instanceof HtmlWebpackPlugin ) );
-	config.plugins = config.plugins.filter( plugin => ! ( plugin instanceof InterpolateHtmlPlugin ) );
+	// config.plugins = config.plugins.filter( plugin => ! ( plugin instanceof HtmlWebpackPlugin ) );
+	// config.plugins = config.plugins.filter( plugin => ! ( plugin instanceof InterpolateHtmlPlugin ) );
 
 	// Change the optimization settings to only output async chunks. This means
 	// only the runtime and main bundle file need to be enqueued and helps us
